@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Word Count</title>
+    <style>
+      p {
+        display: inline;
+        font-weight: bold;
+      }
+      h3 {
+        margin: 2px;
+        font-weight: 300;
+        padding: 0;
+      }
+    </style>
+    <script>
+      function get_word_count() {
+        let words = document.getElementById("get_word_count").value;
+        let word_count = words.split(" ").length;
+        let text_count = words.split(" ").join("");
+        let text_count_element = document.getElementById("text_count");
+        text_count_element.innerText = text_count.length;
+        let word_count_element = document.getElementById("word_count");
+        word_count_element.innerText = word_count;
+        document.getElementById("capital_letters").innerText =
+          words.toUpperCase();
+        document.getElementById("small_letters").innerText =
+          words.toLowerCase();
+      }
+    </script>
+  </head>
+  <body>
+    <p>Get complete details about text</p>
+    <br />
+    <textarea id="get_word_count" onkeyup="get_word_count()"></textarea><br />
+    <h3 class="text">
+      Text Count
+      <p id="text_count"></p>
+    </h3>
+    <br />
+    <h3 class="text">
+      Word Count
+      <p id="word_count"></p>
+    </h3>
+    <br />
+    <h3 class="text">
+      Capital Letters
+      <p id="capital_letters"></p>
+    </h3>
+    <br />
+    <h3 class="text">
+      Small Letters
+      <p id="small_letters"></p>
+    </h3>
+  </body>
+</html>
